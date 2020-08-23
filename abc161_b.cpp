@@ -10,22 +10,22 @@ typedef vector<int> vi;
 
 ll mod = 1e9+7;
 
-ll solve() {
-    int x, n, a; cin >> x >> n;
-    unordered_set<int> num_set;
+string solve() {
+    int n, m, a; cin >> n >> m;
+    vi nums;
     rep(i, n) {
         cin >> a;
-        num_set.insert(a);
+        nums.push_back(a);
     }
-    int left = x, right = x;
-    while (num_set.count(left)) {
-        left--;
-    }
-    while (num_set.count(right)) {
-        right++;
+    sort(nums.rbegin(), nums.rend());
+    int sum = accumulate(nums.begin(), nums.end(), 0);
+    rep(i, m) {
+        if (nums[i] / static_cast<double>(sum) < 1 / static_cast<double>(4 * m)) {
+            return "No";
+        }
     }
 
-    return (x - left <= right - x) ? left : right;
+    return "Yes";
 }
 
 int main() {

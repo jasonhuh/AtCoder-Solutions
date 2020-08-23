@@ -5,21 +5,20 @@ using namespace std;
 #define reps(i,s,n) for(int (i) = (s); (i) < (n); (i)++)
 #define rep(i,n) reps(i,0,n)
 
-using ll = long long;
-using vi = vector<int>;
+typedef long long ll;
+typedef vector<int> vi;
 
 ll mod = 1e9+7;
 
 ll solve() {
-    int n; cin >> n;
+    ll n, a, b; cin >> n >> a >> b;
+    if ( a == 0 && b == 0) return 0;
+    ll c = a + b;
 
-    return n * n;
+    return a * (n / c) + min(n % c, a);
 }
 
 int main() {
-    // freopen("input.txt", "r", stdin); 
-    // freopen("output.txt", "w", stdout);
-
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 

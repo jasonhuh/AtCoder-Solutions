@@ -11,21 +11,23 @@ typedef vector<int> vi;
 ll mod = 1e9+7;
 
 ll solve() {
-    int x, n, a; cin >> x >> n;
-    unordered_set<int> num_set;
-    rep(i, n) {
+    int N, a; cin >> N;
+    vi nums;
+    rep(i, N) {
         cin >> a;
-        num_set.insert(a);
-    }
-    int left = x, right = x;
-    while (num_set.count(left)) {
-        left--;
-    }
-    while (num_set.count(right)) {
-        right++;
+        nums.push_back(a);
     }
 
-    return (x - left <= right - x) ? left : right;
+    int res = numeric_limits<int>::max();
+    reps(p, 1, 101) {
+        int sum = 0;
+        for (auto num : nums) {
+            sum += (num - p)*(num - p);
+        }
+        res = min(res, sum);
+    }
+
+    return res;
 }
 
 int main() {

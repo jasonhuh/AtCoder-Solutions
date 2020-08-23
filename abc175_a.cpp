@@ -11,21 +11,19 @@ typedef vector<int> vi;
 ll mod = 1e9+7;
 
 ll solve() {
-    int x, n, a; cin >> x >> n;
-    unordered_set<int> num_set;
+    string s; cin >> s;
+    int cnt = 0, n = static_cast<int>(s.size());
+    int res = 0;
     rep(i, n) {
-        cin >> a;
-        num_set.insert(a);
-    }
-    int left = x, right = x;
-    while (num_set.count(left)) {
-        left--;
-    }
-    while (num_set.count(right)) {
-        right++;
+        if (s[i] == 'R') {
+            cnt++;
+        } else {
+            cnt = 0;
+        }
+        res = max(res, cnt);
     }
 
-    return (x - left <= right - x) ? left : right;
+    return res;
 }
 
 int main() {
