@@ -1,27 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-string solve() {
+void solve() {
     int n; cin >> n;
-    bool used = false;
-    int prev = -1;
-    int a;
-    vi nums;
-    for (int i = 0; i < n; ++i) {
-        cin >> a;
-        nums.push_back(a);
+    int diffs {0};
+    for (int i = 1; i <= n; ++i) {
+        int a; cin >> a;
+        if (i != a) {
+            diffs++;
+        }
     }
-
-    return "YES";
+    if (diffs == 0 || diffs == 2) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }    
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-
-	cout << solve() << endl;
+    solve();
 }
