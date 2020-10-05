@@ -1,31 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-typedef long long ll;
-typedef vector<int> vi;
-
-ll solve() {
+int main() {
     int n, k; cin >> n >> k;
-    vi nums;
-    int a;
-    for (int i = 0 ; i < n; ++i) {
+    vector<int> nums(n);
+    for (int &a : nums) {
         cin >> a;
-        nums.push_back(a);
     }
+
     sort(nums.begin(), nums.end());
 
-    ll res = 0;
+    int res = 0;
     for (int i = 0; i < k; ++i) {
         res += nums[i];
-    }
-
-    return res;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-
-	cout << solve() << endl;
+    }    
+	cout << res << endl;
 }

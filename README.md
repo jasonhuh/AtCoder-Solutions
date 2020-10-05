@@ -1,7 +1,7 @@
 # AtCoder-Solutions
 AtCoder-Solutions
 
-For AtCoder, use GCC. Clang results in CE (compiler error) as it does not recognize `<bits/stdc++.h>` library.
+For AtCoder, use GCC instead of Clang if you want to use `<bits/stdc++.h>` library. Clang results in CE (compiler error) as it does not recognize `<bits/stdc++.h>` library.
 
 https://kenkoooo.com/atcoder#/table/
 

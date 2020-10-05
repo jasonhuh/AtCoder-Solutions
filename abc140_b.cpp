@@ -2,11 +2,10 @@
 #include <vector>
 
 using namespace std;
-using vi = vector<int>;
 
 int main() {
     int n; cin >> n;
-    vi A(n), B(n), C(n - 1);
+    vector<int> A(n), B(n), C(n - 1);
     for (auto &a : A) {
         cin >> a;
     }
